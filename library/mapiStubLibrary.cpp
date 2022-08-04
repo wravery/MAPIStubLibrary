@@ -2,11 +2,18 @@
 #include <Windows.h>
 
 #include <MAPI.h>
+#include <MAPIX.h>
 #include <MAPIForm.h>
 #include <MAPIUtil.h>
 #include <MAPIVal.h>
 #include <MAPISPI.h>
 #include <IMessage.h>
+
+#ifdef WIN_NOEXCEPT
+#undef WIN_NOEXCEPT
+#define WIN_NOEXCEPT
+#endif
+
 #include <TNEF.h>
 
 // clang-format off
@@ -432,7 +439,7 @@ namespace mapistub
 #define DEFINE_STUB_FUNCTION_V4( \
 	_linkage, _modifiers, _name, _lookup, _param1_type, _param2_type, _param3_type, _param4_type) \
 \
-	_linkage typedef void(_modifiers * _name##TYPE)(_param1_type, _param2_type, _param3_type, _param4_type) \
+	_linkage typedef void(_modifiers * _name##TYPE)(_param1_type, _param2_type, _param3_type, _param4_type); \
 \
 		_linkage void _modifiers \
 		_name(_param1_type a, _param2_type b, _param3_type c, _param4_type d) \
