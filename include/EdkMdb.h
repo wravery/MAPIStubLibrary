@@ -100,7 +100,7 @@
 #define PR_PROFILE_ABP_MTHREAD_TIMEOUT_SECS		PROP_TAG( PT_LONG,		pidProfileMin+0x3a)
 
 /* Properties passed through the Service Entry to the OST */
-#define PR_OST_ENCRYPTION				PROP_TAG(PT_LONG, 0x6702)
+#define PR_OST_ENCRYPTION				MAKE_SCODE(0, 0x6702, PT_LONG)
 
 /* Values for PR_OST_ENCRYPTION */
 #define OSTF_NO_ENCRYPTION              ((DWORD)0x80000000)
@@ -290,17 +290,17 @@
 #define PR_STORE_OFFLINE				PROP_TAG( PT_BOOLEAN,	pidStoreMin+0x1A)
 
 // Quota information on the store in KB (yes, it overlaps props, but it's OK)
-#define PR_MAX_SUBMIT_MESSAGE_SIZE		PROP_TAG( PT_LONG, 0x666D)
-#define PR_PROHIBIT_SEND_QUOTA			PROP_TAG( PT_LONG, 0x666E)
-#define PR_PROHIBIT_RECEIVE_QUOTA		PROP_TAG( PT_LONG, 0x666A)
+#define PR_MAX_SUBMIT_MESSAGE_SIZE		MAKE_SCODE(0, 0x666D, PT_LONG)
+#define PR_PROHIBIT_SEND_QUOTA			MAKE_SCODE(0, 0x666E, PT_LONG)
+#define PR_PROHIBIT_RECEIVE_QUOTA		MAKE_SCODE(0, 0x666A, PT_LONG)
 
 // In transit state for store object.  This state is
 // set when mail is being moved and it pauses mail delivery
 // to the mail box
-#define	PR_IN_TRANSIT					PROP_TAG( PT_BOOLEAN, pidStoreMin)
+#define	PR_IN_TRANSIT					MAKE_SCODE(0, pidStoreMin, PT_BOOLEAN)
 
 // Writable only with Admin rights, available on public stores and folders
-#define PR_REPLICATION_STYLE			PROP_TAG( PT_LONG,		pidAdminMin)
+#define PR_REPLICATION_STYLE			MAKE_SCODE(0, pidAdminMin, PT_LONG)
 #define PR_REPLICATION_SCHEDULE			PROP_TAG( PT_BINARY,	pidAdminMin+0x01)
 #define PR_REPLICATION_MESSAGE_PRIORITY PROP_TAG( PT_LONG,		pidAdminMin+0x02)
 
@@ -367,9 +367,9 @@
 #define PR_IMPLIED_RESTRICTIONS		PROP_TAG( PT_MV_BINARY,	pidSpecialMin+0x0F)
 
 // Read only, available on all folders
-#define	PR_FOLDER_CHILD_COUNT		PROP_TAG( PT_LONG,		pidFolderMin)
+#define	PR_FOLDER_CHILD_COUNT		MAKE_SCODE(0, pidFolderMin, PT_LONG)
 #define	PR_RIGHTS					PROP_TAG( PT_LONG,		pidFolderMin+0x01)
-#define	PR_ACL_TABLE				PROP_TAG( PT_OBJECT,	pidExchangeXmitReservedMin)
+#define	PR_ACL_TABLE				MAKE_SCODE(0, pidExchangeXmitReservedMin, PT_OBJECT)
 #define	PR_RULES_TABLE				PROP_TAG( PT_OBJECT,	pidExchangeXmitReservedMin+0x1)
 #define	PR_HAS_RULES				PROP_TAG( PT_BOOLEAN,	pidFolderMin+0x02)
 #define PR_HAS_MODERATOR_RULES		PROP_TAG( PT_BOOLEAN,	pidFolderMin+0x07 )
@@ -378,7 +378,7 @@
 #define	PR_ADDRESS_BOOK_ENTRYID		PROP_TAG( PT_BINARY,	pidFolderMin+0x03)
 
 //Writable, available on folders in all stores
-#define	PR_ACL_DATA						PROP_TAG( PT_BINARY,	pidExchangeXmitReservedMin)
+#define	PR_ACL_DATA						MAKE_SCODE(0, pidExchangeXmitReservedMin, PT_BINARY)
 #define	PR_RULES_DATA					PROP_TAG( PT_BINARY,	pidExchangeXmitReservedMin+0x01)
 #define	PR_EXTENDED_ACL_DATA			PROP_TAG( PT_BINARY,	pidExchangeXmitReservedMin+0x1E)
 #define	PR_FOLDER_DESIGN_FLAGS			PROP_TAG( PT_LONG,		pidExchangeXmitReservedMin+0x02)
@@ -550,11 +550,11 @@
 #define PR_DEFERRED_SEND_TIME			PROP_TAG( PT_SYSTIME,	pidExchangeXmitReservedMin+0xF)
 
 //Writeable, intended for both folders and messages in gateway mailbox
-#define	PR_GW_ADMIN_OPERATIONS			PROP_TAG( PT_LONG,		pidMessageWriteableMin)
+#define	PR_GW_ADMIN_OPERATIONS			MAKE_SCODE(0, pidMessageWriteableMin, PT_LONG)
 
 //Writeable, used for DMS messages
-#define PR_P1_CONTENT					PROP_TAG( PT_BINARY, 0x1100)
-#define PR_P1_CONTENT_TYPE				PROP_TAG( PT_BINARY, 0x1101)
+#define PR_P1_CONTENT					MAKE_SCODE(0, 0x1100, PT_BINARY)
+#define PR_P1_CONTENT_TYPE				MAKE_SCODE(0, 0x1101, PT_BINARY)
 
 #define	PR_REPLICA_SERVER_W				PROP_TAG(PT_UNICODE,	pidMessageReadOnlyMin+0x4)
 
@@ -580,17 +580,17 @@
 #define PR_DOTSTUFF_STATE				PROP_TAG(PT_LONG, pidUserNonTransmitMin+0x1)
 
 // Raw byte count of mime stream, if mime exists.
-#define PR_MIME_SIZE					PROP_TAG(PT_LONG,	0x6746)
-#define PR_MIME_SIZE_EXTENDED			PROP_TAG(PT_I8,		0x6746)
+#define PR_MIME_SIZE					MAKE_SCODE(0, 0x6746, PT_LONG)
+#define PR_MIME_SIZE_EXTENDED			MAKE_SCODE(0, 0x6746, PT_I8)
 
 // Raw byte count of ptagInternetContent, whether it is a mime message
 // or freedoc using OURL
-#define PR_FILE_SIZE					PROP_TAG(PT_LONG,	0x6747)
-#define PR_FILE_SIZE_EXTENDED			PROP_TAG(PT_I8,		0x6747)
+#define PR_FILE_SIZE					MAKE_SCODE(0, 0x6747, PT_LONG)
+#define PR_FILE_SIZE_EXTENDED			MAKE_SCODE(0, 0x6747, PT_I8)
 
 // Sender's editor format
 #ifndef PR_MSG_EDITOR_FORMAT
-	#define PR_MSG_EDITOR_FORMAT			PROP_TAG( PT_LONG, 0x5909 )
+	#define PR_MSG_EDITOR_FORMAT			MAKE_SCODE(0, 0x5909, PT_LONG)
 	#define EDITOR_FORMAT_DONTKNOW			((ULONG)0)
 	#define EDITOR_FORMAT_PLAINTEXT 		((ULONG)1)
 	#define EDITOR_FORMAT_HTML				((ULONG)2)
@@ -680,7 +680,7 @@
 
 // Appears on attachments to a message marked to be in conflict.  Identifies
 // those attachments which are conflicting versions of the top level message
-#define	PR_IN_CONFLICT					PROP_TAG(PT_BOOLEAN, pidAttachReadOnlyMin)
+#define	PR_IN_CONFLICT					MAKE_SCODE(0, pidAttachReadOnlyMin, PT_BOOLEAN)
 
 
 /*------------------------------------------------------------------------
@@ -803,7 +803,7 @@
 
 //This property can be used in a contents table to get PR_ENTRYID returned
 //as a long term entryid instead of a short term entryid.
-#define	PR_LONGTERM_ENTRYID_FROM_TABLE	PROP_TAG(PT_BINARY,			pidSpecialMin)
+#define	PR_LONGTERM_ENTRYID_FROM_TABLE	MAKE_SCODE(0, pidSpecialMin, PT_BINARY)
 
 // This is read only property that is used for contents tables that include
 // subfolder entries.
@@ -1269,38 +1269,38 @@ typedef BYTE ROLESCOPE;
 //
 //	Application role properties
 //
-#define	PR_XMT_SECURITY_ROLE_1				PROP_TAG(PT_BINARY,		0x3d25)
-#define	PR_XMT_SECURITY_ROLE_1_AS_XML		PROP_TAG(PT_TSTRING,	0x3d25)
-#define	PR_XMT_SECURITY_ROLE_2				PROP_TAG(PT_BINARY,		0x3d26)
-#define	PR_XMT_SECURITY_ROLE_2_AS_XML		PROP_TAG(PT_TSTRING,	0x3d26)
-#define	PR_XMT_SECURITY_ROLE_3				PROP_TAG(PT_BINARY,		0x3d27)
-#define	PR_XMT_SECURITY_ROLE_3_AS_XML		PROP_TAG(PT_TSTRING,	0x3d27)
-#define	PR_XMT_SECURITY_ROLE_4				PROP_TAG(PT_BINARY,		0x3d28)
-#define	PR_XMT_SECURITY_ROLE_4_AS_XML		PROP_TAG(PT_TSTRING,	0x3d28)
-#define	PR_XMT_SECURITY_ROLE_5				PROP_TAG(PT_BINARY,		0x3d29)
-#define	PR_XMT_SECURITY_ROLE_5_AS_XML		PROP_TAG(PT_TSTRING,	0x3d29)
-#define	PR_XMT_SECURITY_ROLE_6				PROP_TAG(PT_BINARY,		0x3d2A)
-#define	PR_XMT_SECURITY_ROLE_6_AS_XML		PROP_TAG(PT_TSTRING,	0x3d2A)
-#define	PR_XMT_SECURITY_ROLE_7				PROP_TAG(PT_BINARY,		0x3d2B)
-#define	PR_XMT_SECURITY_ROLE_7_AS_XML		PROP_TAG(PT_TSTRING,	0x3d2B)
-#define	PR_XMT_SECURITY_ROLE_8				PROP_TAG(PT_BINARY,		0x3d2C)
-#define	PR_XMT_SECURITY_ROLE_8_AS_XML		PROP_TAG(PT_TSTRING,	0x3d2C)
-#define	PR_NON_XMT_SECURITY_ROLE_1			PROP_TAG(PT_BINARY,		0x0E7C)
-#define	PR_NON_XMT_SECURITY_ROLE_1_AS_XML	PROP_TAG(PT_TSTRING,	0x0E7C)
-#define	PR_NON_XMT_SECURITY_ROLE_2			PROP_TAG(PT_BINARY,		0x0E7D)
-#define	PR_NON_XMT_SECURITY_ROLE_2_AS_XML	PROP_TAG(PT_TSTRING,	0x0E7D)
-#define	PR_NON_XMT_SECURITY_ROLE_3			PROP_TAG(PT_BINARY,		0x0E7E)
-#define	PR_NON_XMT_SECURITY_ROLE_3_AS_XML	PROP_TAG(PT_TSTRING,	0x0E7E)
-#define	PR_NON_XMT_SECURITY_ROLE_4			PROP_TAG(PT_BINARY,		0x0E7F)
-#define	PR_NON_XMT_SECURITY_ROLE_4_AS_XML	PROP_TAG(PT_TSTRING,	0x0E7F)
-#define	PR_NON_XMT_SECURITY_ROLE_5			PROP_TAG(PT_BINARY,		0x0E80)
-#define	PR_NON_XMT_SECURITY_ROLE_5_AS_XML	PROP_TAG(PT_TSTRING,	0x0E80)
-#define	PR_NON_XMT_SECURITY_ROLE_6			PROP_TAG(PT_BINARY,		0x0E81)
-#define	PR_NON_XMT_SECURITY_ROLE_6_AS_XML	PROP_TAG(PT_TSTRING,	0x0E81)
-#define	PR_NON_XMT_SECURITY_ROLE_7			PROP_TAG(PT_BINARY,		0x0E82)
-#define	PR_NON_XMT_SECURITY_ROLE_7_AS_XML	PROP_TAG(PT_TSTRING,	0x0E82)
-#define	PR_NON_XMT_SECURITY_ROLE_8			PROP_TAG(PT_BINARY,		0x0E83)
-#define	PR_NON_XMT_SECURITY_ROLE_8_AS_XML	PROP_TAG(PT_TSTRING,	0x0E83)
+#define	PR_XMT_SECURITY_ROLE_1				MAKE_SCODE(0, 0x3d25, PT_BINARY)
+#define	PR_XMT_SECURITY_ROLE_1_AS_XML		MAKE_SCODE(0, 0x3d25, PT_TSTRING)
+#define	PR_XMT_SECURITY_ROLE_2				MAKE_SCODE(0, 0x3d26, PT_BINARY)
+#define	PR_XMT_SECURITY_ROLE_2_AS_XML		MAKE_SCODE(0, 0x3d26, PT_TSTRING)
+#define	PR_XMT_SECURITY_ROLE_3				MAKE_SCODE(0, 0x3d27, PT_BINARY)
+#define	PR_XMT_SECURITY_ROLE_3_AS_XML		MAKE_SCODE(0, 0x3d27, PT_TSTRING)
+#define	PR_XMT_SECURITY_ROLE_4				MAKE_SCODE(0, 0x3d28, PT_BINARY)
+#define	PR_XMT_SECURITY_ROLE_4_AS_XML		MAKE_SCODE(0, 0x3d28, PT_TSTRING)
+#define	PR_XMT_SECURITY_ROLE_5				MAKE_SCODE(0, 0x3d29, PT_BINARY)
+#define	PR_XMT_SECURITY_ROLE_5_AS_XML		MAKE_SCODE(0, 0x3d29, PT_TSTRING)
+#define	PR_XMT_SECURITY_ROLE_6				MAKE_SCODE(0, 0x3d2A, PT_BINARY)
+#define	PR_XMT_SECURITY_ROLE_6_AS_XML		MAKE_SCODE(0, 0x3d2A, PT_TSTRING)
+#define	PR_XMT_SECURITY_ROLE_7				MAKE_SCODE(0, 0x3d2B, PT_BINARY)
+#define	PR_XMT_SECURITY_ROLE_7_AS_XML		MAKE_SCODE(0, 0x3d2B, PT_TSTRING)
+#define	PR_XMT_SECURITY_ROLE_8				MAKE_SCODE(0, 0x3d2C, PT_BINARY)
+#define	PR_XMT_SECURITY_ROLE_8_AS_XML		MAKE_SCODE(0, 0x3d2C, PT_TSTRING)
+#define	PR_NON_XMT_SECURITY_ROLE_1			MAKE_SCODE(0, 0x0E7C, PT_BINARY)
+#define	PR_NON_XMT_SECURITY_ROLE_1_AS_XML	MAKE_SCODE(0, 0x0E7C, PT_TSTRING)
+#define	PR_NON_XMT_SECURITY_ROLE_2			MAKE_SCODE(0, 0x0E7D, PT_BINARY)
+#define	PR_NON_XMT_SECURITY_ROLE_2_AS_XML	MAKE_SCODE(0, 0x0E7D, PT_TSTRING)
+#define	PR_NON_XMT_SECURITY_ROLE_3			MAKE_SCODE(0, 0x0E7E, PT_BINARY)
+#define	PR_NON_XMT_SECURITY_ROLE_3_AS_XML	MAKE_SCODE(0, 0x0E7E, PT_TSTRING)
+#define	PR_NON_XMT_SECURITY_ROLE_4			MAKE_SCODE(0, 0x0E7F, PT_BINARY)
+#define	PR_NON_XMT_SECURITY_ROLE_4_AS_XML	MAKE_SCODE(0, 0x0E7F, PT_TSTRING)
+#define	PR_NON_XMT_SECURITY_ROLE_5			MAKE_SCODE(0, 0x0E80, PT_BINARY)
+#define	PR_NON_XMT_SECURITY_ROLE_5_AS_XML	MAKE_SCODE(0, 0x0E80, PT_TSTRING)
+#define	PR_NON_XMT_SECURITY_ROLE_6			MAKE_SCODE(0, 0x0E81, PT_BINARY)
+#define	PR_NON_XMT_SECURITY_ROLE_6_AS_XML	MAKE_SCODE(0, 0x0E81, PT_TSTRING)
+#define	PR_NON_XMT_SECURITY_ROLE_7			MAKE_SCODE(0, 0x0E82, PT_BINARY)
+#define	PR_NON_XMT_SECURITY_ROLE_7_AS_XML	MAKE_SCODE(0, 0x0E82, PT_TSTRING)
+#define	PR_NON_XMT_SECURITY_ROLE_8			MAKE_SCODE(0, 0x0E83, PT_BINARY)
+#define	PR_NON_XMT_SECURITY_ROLE_8_AS_XML	MAKE_SCODE(0, 0x0E83, PT_TSTRING)
 
 
 /* Rules specifics */
@@ -2407,24 +2407,24 @@ DECLARE_MAPI_INTERFACE_PTR(IExchangeMessageConversion, LPEXCHANGEMESSAGECONVERSI
 
 //	Administrative security descriptor for a folder, if present.
 //
-#define	PR_ADMIN_SECURITY_DESCRIPTOR		PROP_TAG(PT_BINARY,		0x3d21)
+#define	PR_ADMIN_SECURITY_DESCRIPTOR		MAKE_SCODE(0, 0x3d21, PT_BINARY)
 //
 //	Win32 compatible representation of folder/message security descriptor
 //
-#define	PR_WIN32_SECURITY_DESCRIPTOR		PROP_TAG(PT_BINARY,		0x3d22)
+#define	PR_WIN32_SECURITY_DESCRIPTOR		MAKE_SCODE(0, 0x3d22, PT_BINARY)
 //
 //	TRUE if PR_NT_SECURITY_DESCRIPTOR describes non Win32 ACL semantics.
 //	If this is set, components that use PR_WIN32_SECURITY_DESCRIPTOR cannot
 //	allow modification of PR_NT_SECURITY_DESCRIPTOR (or PR_DEFAULT_MESSAGE_SD).
 //
-#define	PR_NON_WIN32_ACL					PROP_TAG(PT_BOOLEAN,	0x3d23)
+#define	PR_NON_WIN32_ACL					MAKE_SCODE(0, 0x3d23, PT_BOOLEAN)
 
 //
 //	TRUE if any items in the folder contain item level ACLs
 //
-#define	PR_ITEM_LEVEL_ACL					PROP_TAG(PT_BOOLEAN,	0x3d24)
+#define	PR_ITEM_LEVEL_ACL					MAKE_SCODE(0, 0x3d24, PT_BOOLEAN)
 
-#define PR_DAV_TRANSFER_SECURITY_DESCRIPTOR		PROP_TAG(PT_BINARY, 0x0E84)
+#define PR_DAV_TRANSFER_SECURITY_DESCRIPTOR		MAKE_SCODE(0, 0x0E84, PT_BINARY)
 
 
 /*------------------------------------------------------------------------------------
@@ -2439,7 +2439,7 @@ DECLARE_MAPI_INTERFACE_PTR(IExchangeMessageConversion, LPEXCHANGEMESSAGECONVERSI
 #ifdef SERVER_SLOW_LINK
 //$ The value of this property ID will change in the future.  Do not rely on
 //$ its current value.  Rely on the define only.
-#define PR_STORE_SLOWLINK						PROP_TAG(PT_BOOLEAN, 0x7c0a)
+#define PR_STORE_SLOWLINK						MAKE_SCODE(0, 0x7c0a, PT_BOOLEAN)
 #endif
 
 
@@ -2472,7 +2472,7 @@ DECLARE_MAPI_INTERFACE_PTR(IExchangeMessageConversion, LPEXCHANGEMESSAGECONVERSI
  *	sync events for that folder by specifying the corresponding GUID in
  *	the NEWLOGON object.
  */
-#define PR_SYNCEVENT_SUPPRESS_GUID				PROP_TAG( PT_BINARY,	0x3880 )
+#define PR_SYNCEVENT_SUPPRESS_GUID				MAKE_SCODE(0, 0x3880, PT_BINARY)
 
 /*
  *	The following are the well-known GUIDS for the different special folders.
@@ -2522,19 +2522,19 @@ DECLARE_MAPI_INTERFACE_PTR(IExchangeMessageConversion, LPEXCHANGEMESSAGECONVERSI
  */
  //REVIEW:: some of these definitions appear both in MAPITAGS.H and EDKMDB.H
  //one set of definitions should be removed
-#define PR_LOCK_BRANCH_ID						PROP_TAG( PT_I8,		0x3800 )
-#define PR_LOCK_RESOURCE_FID					PROP_TAG( PT_I8,		0x3801 )
-#define PR_LOCK_RESOURCE_DID					PROP_TAG( PT_I8,		0x3802 )
-#define PR_LOCK_RESOURCE_VID					PROP_TAG( PT_I8,		0x3803 )
-#define PR_LOCK_ENLISTMENT_CONTEXT				PROP_TAG( PT_BINARY,	0x3804 )
-#define PR_LOCK_TYPE							PROP_TAG( PT_SHORT,		0x3805 )
-#define PR_LOCK_SCOPE							PROP_TAG( PT_SHORT,		0x3806 )
-#define PR_LOCK_TRANSIENT_ID					PROP_TAG( PT_BINARY,	0x3807 )
-#define PR_LOCK_DEPTH							PROP_TAG( PT_LONG,		0x3808 )
-#define PR_LOCK_TIMEOUT							PROP_TAG( PT_LONG,		0x3809 )
-#define PR_LOCK_EXPIRY_TIME						PROP_TAG( PT_SYSTIME,	0x380a )
-#define PR_LOCK_GLID							PROP_TAG( PT_BINARY,	0x380b )
-#define PR_LOCK_NULL_URL_W						PROP_TAG( PT_UNICODE,	0x380c )
+#define PR_LOCK_BRANCH_ID						MAKE_SCODE(0, 0x3800, PT_I8)
+#define PR_LOCK_RESOURCE_FID					MAKE_SCODE(0, 0x3801, PT_I8)
+#define PR_LOCK_RESOURCE_DID					MAKE_SCODE(0, 0x3802, PT_I8)
+#define PR_LOCK_RESOURCE_VID					MAKE_SCODE(0, 0x3803, PT_I8)
+#define PR_LOCK_ENLISTMENT_CONTEXT				MAKE_SCODE(0, 0x3804, PT_BINARY)
+#define PR_LOCK_TYPE							MAKE_SCODE(0, 0x3805, PT_SHORT)
+#define PR_LOCK_SCOPE							MAKE_SCODE(0, 0x3806, PT_SHORT)
+#define PR_LOCK_TRANSIENT_ID					MAKE_SCODE(0, 0x3807, PT_BINARY)
+#define PR_LOCK_DEPTH							MAKE_SCODE(0, 0x3808, PT_LONG)
+#define PR_LOCK_TIMEOUT							MAKE_SCODE(0, 0x3809, PT_LONG)
+#define PR_LOCK_EXPIRY_TIME						MAKE_SCODE(0, 0x380a, PT_SYSTIME)
+#define PR_LOCK_GLID							MAKE_SCODE(0, 0x380b, PT_BINARY)
+#define PR_LOCK_NULL_URL_W						MAKE_SCODE(0, 0x380c, PT_UNICODE)
 
 /*
  * Lock flags
@@ -2593,16 +2593,16 @@ DECLARE_MAPI_INTERFACE_PTR(IExchangeMessageConversion, LPEXCHANGEMESSAGECONVERSI
 #define ptagLISSubfolders			PROP_TAG( PT_BOOLEAN,	pidLocalStoreInternalMin+0x0)
 #define ptagLISUnreadCount			PROP_TAG( PT_LONG,		pidLocalStoreInternalMin+0x1)
 
-#define ptagLISErrorCode			PROP_TAG( PT_LONG,		pidLISErrorCodeMin+0x0)		//	PROP_TAG(PT_LONG,		0x65aa)
-#define ptagLISErrorItemType		PROP_TAG( PT_LONG,		pidLISErrorCodeMin+0x1)		//	PROP_TAG(PT_LONG,		0x65ab)
-#define ptagLISErrorOperation		PROP_TAG( PT_LONG,		pidLISErrorCodeMin+0x2)		//	PROP_TAG(PT_LONG,		0x65ac)
-#define ptagLISErrorItemUrl			PROP_TAG( PT_UNICODE,	pidLISErrorCodeMin+0x3)		//	PROP_TAG(PT_UNICODE,	0x65ad)
-#define ptagLISErrorSourceUrl		PROP_TAG( PT_UNICODE,	pidLISErrorCodeMin+0x4)		//	PROP_TAG(PT_UNICODE,	0x65ae)
-#define ptagLISModifiedPropertyList PROP_TAG( PT_UNICODE,	pidLISErrorCodeMin+0x5)		//	PROP_TAG(PT_UNICODE,	0x65af)
-#define ptagLISExtendedErrorinfo	PROP_TAG( PT_LONG,		pidLISErrorCodeMin+0x6)		//	PROP_TAG(PT_LONG,		0x65b0)
+#define ptagLISErrorCode			PROP_TAG( PT_LONG,		pidLISErrorCodeMin+0x0)		//	MAKE_SCODE(0, 0x65aa, PT_LONG)
+#define ptagLISErrorItemType		PROP_TAG( PT_LONG,		pidLISErrorCodeMin+0x1)		//	MAKE_SCODE(0, 0x65ab, PT_LONG)
+#define ptagLISErrorOperation		PROP_TAG( PT_LONG,		pidLISErrorCodeMin+0x2)		//	MAKE_SCODE(0, 0x65ac, PT_LONG)
+#define ptagLISErrorItemUrl			PROP_TAG( PT_UNICODE,	pidLISErrorCodeMin+0x3)		//	MAKE_SCODE(0, 0x65ad, PT_UNICODE)
+#define ptagLISErrorSourceUrl		PROP_TAG( PT_UNICODE,	pidLISErrorCodeMin+0x4)		//	MAKE_SCODE(0, 0x65ae, PT_UNICODE)
+#define ptagLISModifiedPropertyList PROP_TAG( PT_UNICODE,	pidLISErrorCodeMin+0x5)		//	MAKE_SCODE(0, 0x65af, PT_UNICODE)
+#define ptagLISExtendedErrorinfo	PROP_TAG( PT_LONG,		pidLISErrorCodeMin+0x6)		//	MAKE_SCODE(0, 0x65b0, PT_LONG)
 
 // Not in msgfolder prop range
-#define ptagLISErrorLogUrl			PROP_TAG( PT_UNICODE,	pidLocalStoreInternalMin+0x70)		//	PROP_TAG(PT_UNICODE,	0x6570)
+#define ptagLISErrorLogUrl			PROP_TAG( PT_UNICODE,	pidLocalStoreInternalMin+0x70)		//	MAKE_SCODE(0, 0x6570, PT_UNICODE)
 
 // Ptags used between EXOLEDB and LSCache on client machine to pass
 // along the actual client SQL query from EXOLEDB to LSCache in the RES_COMMENT
@@ -2676,7 +2676,7 @@ DECLARE_MAPI_INTERFACE_PTR(IExchangeMessageConversion, LPEXCHANGEMESSAGECONVERSI
 #define PR_TNEF_UNPROCESSED_PROPS		PROP_TAG(PT_BINARY,		pidStoreNonTransMin+0x5c)
 
 // this will notify LIS that this is a new mail so that they can fire new mail notifications
-#define ptagLISNewMail				PROP_TAG(PT_BOOLEAN, 0x65c5)
+#define ptagLISNewMail				MAKE_SCODE(0, 0x65c5, PT_BOOLEAN)
 
 /*------------------------------------------------------------------------
  *

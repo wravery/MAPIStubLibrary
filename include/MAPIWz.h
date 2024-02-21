@@ -35,8 +35,8 @@
  *  Provider should set this property to TRUE if it does not
  *  want the Profile Wizard to display the PST setup page.
  */
-#define PR_WIZARD_NO_PST_PAGE			PROP_TAG(PT_BOOLEAN, 0x6700)
-#define PR_WIZARD_NO_PAB_PAGE			PROP_TAG(PT_BOOLEAN, 0x6701)
+#define PR_WIZARD_NO_PST_PAGE			MAKE_SCODE(0, 0x6700, PT_BOOLEAN)
+#define PR_WIZARD_NO_PAB_PAGE			MAKE_SCODE(0, 0x6701, PT_BOOLEAN)
 
 typedef HRESULT (STDAPICALLTYPE LAUNCHWIZARDENTRY)
 (

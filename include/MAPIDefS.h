@@ -73,7 +73,7 @@
 #endif
 
 
-#define MAPI_NT_SERVICE     ((ULONG) 0x00010000)  /* Provider is being loaded in an NT service */
+#define MAPI_NT_SERVICE     (0x00010000)  /* Provider is being loaded in an NT service */
 
 
 #ifdef	__cplusplus
@@ -137,7 +137,7 @@ typedef struct _FILETIME
  *  MAPI_MODIFY flag to say just what this new access level is.
  */
 
-#define MAPI_MODIFY				((ULONG) 0x00000001)
+#define MAPI_MODIFY				(0x00000001)
 
 /*
  *	The following flags are used to indicate to the client what access
@@ -146,12 +146,12 @@ typedef struct _FILETIME
  *	contents tables
  */
 
-#define	MAPI_ACCESS_MODIFY					((ULONG) 0x00000001)
-#define	MAPI_ACCESS_READ					((ULONG) 0x00000002)
-#define	MAPI_ACCESS_DELETE					((ULONG) 0x00000004)
-#define	MAPI_ACCESS_CREATE_HIERARCHY		((ULONG) 0x00000008)
-#define	MAPI_ACCESS_CREATE_CONTENTS			((ULONG) 0x00000010)
-#define	MAPI_ACCESS_CREATE_ASSOCIATED		((ULONG) 0x00000020)
+#define	MAPI_ACCESS_MODIFY					(0x00000001)
+#define	MAPI_ACCESS_READ					(0x00000002)
+#define	MAPI_ACCESS_DELETE					(0x00000004)
+#define	MAPI_ACCESS_CREATE_HIERARCHY		(0x00000008)
+#define	MAPI_ACCESS_CREATE_CONTENTS			(0x00000010)
+#define	MAPI_ACCESS_CREATE_ASSOCIATED		(0x00000020)
 
 /*
  *	The MAPI_UNICODE flag is used in many different MAPI calls to signify
@@ -162,7 +162,7 @@ typedef struct _FILETIME
  *	that bit, given the application's default character set.
  */
 
-#define MAPI_UNICODE			((ULONG) 0x80000000)
+#define MAPI_UNICODE			(0x80000000)
 
 #ifdef UNICODE
 #define fMapiUnicode			MAPI_UNICODE
@@ -237,18 +237,18 @@ typedef struct _MAPIUID
 
 /* Object type */
 
-#define MAPI_STORE		((ULONG) 0x00000001)	/* Message Store */
-#define MAPI_ADDRBOOK	((ULONG) 0x00000002)	/* Address Book */
-#define MAPI_FOLDER		((ULONG) 0x00000003)	/* Folder */
-#define MAPI_ABCONT		((ULONG) 0x00000004)	/* Address Book Container */
-#define MAPI_MESSAGE	((ULONG) 0x00000005)	/* Message */
-#define MAPI_MAILUSER	((ULONG) 0x00000006)	/* Individual Recipient */
-#define MAPI_ATTACH		((ULONG) 0x00000007)	/* Attachment */
-#define MAPI_DISTLIST	((ULONG) 0x00000008)	/* Distribution List Recipient */
-#define MAPI_PROFSECT	((ULONG) 0x00000009)	/* Profile Section */
-#define MAPI_STATUS		((ULONG) 0x0000000A)	/* Status Object */
-#define MAPI_SESSION	((ULONG) 0x0000000B)	/* Session */
-#define MAPI_FORMINFO	((ULONG) 0x0000000C)	/* Form Information */
+#define MAPI_STORE		(0x00000001)	/* Message Store */
+#define MAPI_ADDRBOOK	(0x00000002)	/* Address Book */
+#define MAPI_FOLDER		(0x00000003)	/* Folder */
+#define MAPI_ABCONT		(0x00000004)	/* Address Book Container */
+#define MAPI_MESSAGE	(0x00000005)	/* Message */
+#define MAPI_MAILUSER	(0x00000006)	/* Individual Recipient */
+#define MAPI_ATTACH		(0x00000007)	/* Attachment */
+#define MAPI_DISTLIST	(0x00000008)	/* Distribution List Recipient */
+#define MAPI_PROFSECT	(0x00000009)	/* Profile Section */
+#define MAPI_STATUS		(0x0000000A)	/* Status Object */
+#define MAPI_SESSION	(0x0000000B)	/* Session */
+#define MAPI_FORMINFO	(0x0000000C)	/* Form Information */
 
 
 /*
@@ -265,24 +265,24 @@ typedef struct _MAPIUID
 
 #define MV_FLAG			0x1000			/* Multi-value flag */
 
-#define PT_UNSPECIFIED	((ULONG)  0)	/* (Reserved for interface use) type doesn't matter to caller */
-#define PT_NULL			((ULONG)  1)	/* NULL property value */
-#define	PT_I2			((ULONG)  2)	/* Signed 16-bit value */
-#define PT_LONG			((ULONG)  3)	/* Signed 32-bit value */
-#define	PT_R4			((ULONG)  4)	/* 4-byte floating point */
-#define PT_DOUBLE		((ULONG)  5)	/* Floating point double */
-#define PT_CURRENCY		((ULONG)  6)	/* Signed 64-bit int (decimal w/	4 digits right of decimal pt) */
-#define	PT_APPTIME		((ULONG)  7)	/* Application time */
-#define PT_ERROR		((ULONG) 10)	/* 32-bit error value */
-#define PT_BOOLEAN		((ULONG) 11)	/* 16-bit boolean (non-zero true) */
-#define PT_OBJECT		((ULONG) 13)	/* Embedded object in a property */
-#define	PT_I8			((ULONG) 20)	/* 8-byte signed integer */
-#define PT_STRING8		((ULONG) 30)	/* Null terminated 8-bit character string */
-#define PT_UNICODE		((ULONG) 31)	/* Null terminated Unicode string */
-#define PT_SYSTIME		((ULONG) 64)	/* FILETIME 64-bit int w/ number of 100ns periods since Jan 1,1601 */
-#define	PT_CLSID		((ULONG) 72)	/* OLE GUID */
-#define PT_BINARY		((ULONG) 258)	/* Uninterpreted (counted byte array) */
-#define PT_PTR			((ULONG) 259)	/* Pointer Variable, scales to the platform */
+#define PT_UNSPECIFIED	( 0)	/* (Reserved for interface use) type doesn't matter to caller */
+#define PT_NULL			( 1)	/* NULL property value */
+#define	PT_I2			( 2)	/* Signed 16-bit value */
+#define PT_LONG			( 3)	/* Signed 32-bit value */
+#define	PT_R4			( 4)	/* 4-byte floating point */
+#define PT_DOUBLE		( 5)	/* Floating point double */
+#define PT_CURRENCY		( 6)	/* Signed 64-bit int (decimal w/	4 digits right of decimal pt) */
+#define	PT_APPTIME		( 7)	/* Application time */
+#define PT_ERROR		(10)	/* 32-bit error value */
+#define PT_BOOLEAN		(11)	/* 16-bit boolean (non-zero true) */
+#define PT_OBJECT		(13)	/* Embedded object in a property */
+#define	PT_I8			(20)	/* 8-byte signed integer */
+#define PT_STRING8		(30)	/* Null terminated 8-bit character string */
+#define PT_UNICODE		(31)	/* Null terminated Unicode string */
+#define PT_SYSTIME		(64)	/* FILETIME 64-bit int w/ number of 100ns periods since Jan 1,1601 */
+#define	PT_CLSID		(72)	/* OLE GUID */
+#define PT_BINARY		(258)	/* Uninterpreted (counted byte array) */
+#define PT_PTR			(259)	/* Pointer Variable, scales to the platform */
 /* Changes are likely to these numbers, and to their structures. */
 
 /* Alternate property type names for ease of use */
@@ -304,13 +304,13 @@ typedef struct _MAPIUID
 
 #ifdef	UNICODE
 #define PT_TSTRING			PT_UNICODE
-#define PT_MV_TSTRING		(MV_FLAG|PT_UNICODE)
+#define PT_MV_TSTRING		(0x101F)
 #define LPSZ				lpszW
 #define	LPPSZ				lppszW
 #define MVSZ				MVszW
 #else
 #define PT_TSTRING			PT_STRING8
-#define PT_MV_TSTRING		(MV_FLAG|PT_STRING8)
+#define PT_MV_TSTRING		(0x101E)
 #define LPSZ				lpszA
 #define	LPPSZ				lppszA
 #define MVSZ				MVszA
@@ -323,31 +323,31 @@ typedef struct _MAPIUID
  * Use as null values, initializers, sentinels, or what have you.
  */
 
-#define PROP_TYPE_MASK			((ULONG)0x0000FFFF)	/* Mask for Property type */
+#define PROP_TYPE_MASK			(0x0000FFFF)	/* Mask for Property type */
 #define PROP_TYPE(ulPropTag)	(((ULONG)(ulPropTag))&PROP_TYPE_MASK)
 #define PROP_ID(ulPropTag)		(((ULONG)(ulPropTag))>>16)
 #define PROP_TAG(ulPropType,ulPropID)	((((ULONG)(ulPropID))<<16)|((ULONG)(ulPropType)))
 #define PROP_ID_NULL			0
 #define PROP_ID_INVALID			0xFFFF
-#define PR_NULL					PROP_TAG( PT_NULL, PROP_ID_NULL)
+#define PR_NULL					MAKE_SCODE(0, PROP_ID_NULL, PT_NULL)
 #define CHANGE_PROP_TYPE(ulPropTag, ulPropType)	\
 						(((ULONG)0xFFFF0000 & (ulPropTag)) | (ulPropType))
 
 
 /* Multi-valued Property Types */
 
-#define	PT_MV_I2		(MV_FLAG|PT_I2)
-#define PT_MV_LONG		(MV_FLAG|PT_LONG)
-#define	PT_MV_R4		(MV_FLAG|PT_R4)
-#define PT_MV_DOUBLE	(MV_FLAG|PT_DOUBLE)
-#define PT_MV_CURRENCY	(MV_FLAG|PT_CURRENCY)
-#define	PT_MV_APPTIME	(MV_FLAG|PT_APPTIME)
-#define PT_MV_SYSTIME	(MV_FLAG|PT_SYSTIME)
-#define PT_MV_STRING8	(MV_FLAG|PT_STRING8)
-#define PT_MV_BINARY	(MV_FLAG|PT_BINARY)
-#define PT_MV_UNICODE	(MV_FLAG|PT_UNICODE)
-#define	PT_MV_CLSID		(MV_FLAG|PT_CLSID)
-#define PT_MV_I8		(MV_FLAG|PT_I8)
+#define	PT_MV_I2		(0x1002)
+#define PT_MV_LONG		(0x1003)
+#define	PT_MV_R4		(0x1004)
+#define PT_MV_DOUBLE	(0x1005)
+#define PT_MV_CURRENCY	(0x1006)
+#define	PT_MV_APPTIME	(0x1007)
+#define PT_MV_SYSTIME	(0x1040)
+#define PT_MV_STRING8	(0x101E)
+#define PT_MV_BINARY	(0x1102)
+#define PT_MV_UNICODE	(0x101F)
+#define	PT_MV_CLSID		(0x1048)
+#define PT_MV_I8		(0x1014)
 
 /* Alternate property type names for ease of use */
 #define	PT_MV_SHORT		PT_MV_I2
@@ -365,7 +365,7 @@ typedef struct _MAPIUID
  */
 
 #define MV_INSTANCE		0x2000
-#define MVI_FLAG		(MV_FLAG | MV_INSTANCE)
+#define MVI_FLAG		(0x3000)
 #define MVI_PROP(tag)	((tag) | MVI_FLAG)
 
 /* --------------- */
@@ -804,18 +804,18 @@ typedef struct _MAPIERROR
  *		fnevExtended			EXTENDED_NOTIFICATION
  */
 
-#define fnevCriticalError			((ULONG) 0x00000001)
-#define fnevNewMail					((ULONG) 0x00000002)
-#define fnevObjectCreated			((ULONG) 0x00000004)
-#define fnevObjectDeleted			((ULONG) 0x00000008)
-#define fnevObjectModified			((ULONG) 0x00000010)
-#define fnevObjectMoved				((ULONG) 0x00000020)
-#define fnevObjectCopied			((ULONG) 0x00000040)
-#define fnevSearchComplete			((ULONG) 0x00000080)
-#define fnevTableModified			((ULONG) 0x00000100)
-#define	fnevStatusObjectModified	((ULONG) 0x00000200)
-#define	fnevReservedForMapi			((ULONG) 0x40000000)
-#define fnevExtended				((ULONG) 0x80000000)
+#define fnevCriticalError			(0x00000001)
+#define fnevNewMail					(0x00000002)
+#define fnevObjectCreated			(0x00000004)
+#define fnevObjectDeleted			(0x00000008)
+#define fnevObjectModified			(0x00000010)
+#define fnevObjectMoved				(0x00000020)
+#define fnevObjectCopied			(0x00000040)
+#define fnevSearchComplete			(0x00000080)
+#define fnevTableModified			(0x00000100)
+#define	fnevStatusObjectModified	(0x00000200)
+#define	fnevReservedForMapi			(0x40000000)
+#define fnevExtended				(0x80000000)
 
 /* TABLE_NOTIFICATION event types passed in ulTableEvent */
 
@@ -943,7 +943,7 @@ typedef NOTIFCALLBACK FAR * LPNOTIFCALLBACK;
 
 /* Flag values for the progress indicator */
 
-#define MAPI_TOP_LEVEL		((ULONG) 0x00000001)
+#define MAPI_TOP_LEVEL		(0x00000001)
 
 #define MAPI_IMAPIPROGRESS_METHODS(IPURE)								\
 	MAPIMETHOD(Progress)												\
@@ -974,7 +974,7 @@ DECLARE_MAPI_INTERFACE_(IMAPIProgress, IUnknown)
 /* IMAPIProp Interface ----------------------------------------------------- */
 
 /* GetLastError */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /*
  *  Version:
@@ -982,35 +982,35 @@ DECLARE_MAPI_INTERFACE_(IMAPIProgress, IUnknown)
 #define MAPI_ERROR_VERSION		0x00000000L
 
 /* GetPropList */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /* GetProps */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /* SaveChanges */
 
-#define KEEP_OPEN_READONLY		((ULONG) 0x00000001)
-#define KEEP_OPEN_READWRITE		((ULONG) 0x00000002)
-#define FORCE_SAVE				((ULONG) 0x00000004)
-/* define MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
+#define KEEP_OPEN_READONLY		(0x00000001)
+#define KEEP_OPEN_READWRITE		(0x00000002)
+#define FORCE_SAVE				(0x00000004)
+/* define MAPI_DEFERRED_ERRORS	(0x00000008) below */
 
 /* OpenProperty  - ulFlags */
-/******	MAPI_MODIFY				((ULONG) 0x00000001) above */
-#define	MAPI_CREATE				((ULONG) 0x00000002)
-#define STREAM_APPEND			((ULONG) 0x00000004)
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
+/******	MAPI_MODIFY				(0x00000001) above */
+#define	MAPI_CREATE				(0x00000002)
+#define STREAM_APPEND			(0x00000004)
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) below */
 
 /* OpenProperty  - ulInterfaceOptions, IID_IMAPITable */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /* CopyTo, CopyProps */
 
-#define MAPI_MOVE				((ULONG) 0x00000001)
-#define MAPI_NOREPLACE			((ULONG) 0x00000002)
-#define MAPI_DECLINE_OK			((ULONG) 0x00000004)
+#define MAPI_MOVE				(0x00000001)
+#define MAPI_NOREPLACE			(0x00000002)
+#define MAPI_DECLINE_OK			(0x00000004)
 
 #ifndef MAPI_DIALOG				/* also defined in mapi.h */
-#define MAPI_DIALOG				((ULONG) 0x00000008)
+#define MAPI_DIALOG				(0x00000008)
 #endif
 
 #ifndef MAPI_USE_DEFAULT		/* also defined in mapi.h */
@@ -1018,11 +1018,11 @@ DECLARE_MAPI_INTERFACE_(IMAPIProgress, IUnknown)
 #endif
 
 /* Flags used in GetIDsFromNames  */
-/******	MAPI_CREATE				((ULONG) 0x00000002) above */
+/******	MAPI_CREATE				(0x00000002) above */
 
 /* Flags used in GetNamesFromIDs  (bit fields) */
-#define MAPI_NO_STRINGS			((ULONG) 0x00000001)
-#define MAPI_NO_IDS				((ULONG) 0x00000002)
+#define MAPI_NO_STRINGS			(0x00000001)
+#define MAPI_NO_IDS				(0x00000002)
 
 /*  Union discriminator  */
 #define MNID_ID					0
@@ -1110,34 +1110,34 @@ DECLARE_MAPI_INTERFACE_(IMAPIProp, IUnknown)
 
 /* Table status */
 
-#define TBLSTAT_COMPLETE			((ULONG) 0)
-#define TBLSTAT_QCHANGED			((ULONG) 7)
-#define TBLSTAT_SORTING				((ULONG) 9)
-#define TBLSTAT_SORT_ERROR			((ULONG) 10)
-#define TBLSTAT_SETTING_COLS		((ULONG) 11)
-#define TBLSTAT_SETCOL_ERROR		((ULONG) 13)
-#define TBLSTAT_RESTRICTING			((ULONG) 14)
-#define TBLSTAT_RESTRICT_ERROR		((ULONG) 15)
+#define TBLSTAT_COMPLETE			(0)
+#define TBLSTAT_QCHANGED			(7)
+#define TBLSTAT_SORTING				(9)
+#define TBLSTAT_SORT_ERROR			(10)
+#define TBLSTAT_SETTING_COLS		(11)
+#define TBLSTAT_SETCOL_ERROR		(13)
+#define TBLSTAT_RESTRICTING			(14)
+#define TBLSTAT_RESTRICT_ERROR		(15)
 
 
 /* Table Type */
 
-#define TBLTYPE_SNAPSHOT			((ULONG) 0)
-#define TBLTYPE_KEYSET				((ULONG) 1)
-#define TBLTYPE_DYNAMIC				((ULONG) 2)
+#define TBLTYPE_SNAPSHOT			(0)
+#define TBLTYPE_KEYSET				(1)
+#define TBLTYPE_DYNAMIC				(2)
 
 
 /* Sort order */
 
 /* bit 0: set if descending, clear if ascending */
 
-#define TABLE_SORT_ASCEND		((ULONG) 0x00000000)
-#define TABLE_SORT_DESCEND		((ULONG) 0x00000001)
-#define TABLE_SORT_COMBINE		((ULONG) 0x00000002)
+#define TABLE_SORT_ASCEND		(0x00000000)
+#define TABLE_SORT_DESCEND		(0x00000001)
+#define TABLE_SORT_COMBINE		(0x00000002)
 
 // Documented here: https://learn.microsoft.com/en-us/office/client-developer/outlook/mapi/ssortorder
-#define TABLE_SORT_CATEG_MAX	((ULONG) 0x00000004)
-#define TABLE_SORT_CATEG_MIN	((ULONG) 0x00000008)
+#define TABLE_SORT_CATEG_MAX	(0x00000004)
+#define TABLE_SORT_CATEG_MIN	(0x00000008)
 
 /* Data structures */
 
@@ -1172,19 +1172,19 @@ struct _SSortOrderSet_ ## _name \
 
 typedef ULONG_PTR 		BOOKMARK;
 
-#define BOOKMARK_BEGINNING	((BOOKMARK) 0)		/* Before first row */
-#define BOOKMARK_CURRENT	((BOOKMARK) 1)		/* Before current row */
-#define BOOKMARK_END		((BOOKMARK) 2)		/* After last row */
+constexpr unsigned long long BOOKMARK_BEGINNING = ((BOOKMARK) 0);		/* Before first row */
+constexpr unsigned long long BOOKMARK_CURRENT = ((BOOKMARK) 1);		/* Before current row */
+constexpr unsigned long long BOOKMARK_END = ((BOOKMARK) 2);		/* After last row */
 
 /* Fuzzy Level */
 
-#define FL_FULLSTRING		((ULONG) 0x00000000)
-#define FL_SUBSTRING		((ULONG) 0x00000001)
-#define FL_PREFIX			((ULONG) 0x00000002)
+#define FL_FULLSTRING		(0x00000000)
+#define FL_SUBSTRING		(0x00000001)
+#define FL_PREFIX			(0x00000002)
 
-#define FL_IGNORECASE		((ULONG) 0x00010000)
-#define FL_IGNORENONSPACE	((ULONG) 0x00020000)
-#define FL_LOOSE			((ULONG) 0x00040000)
+#define FL_IGNORECASE		(0x00010000)
+#define FL_IGNORENONSPACE	(0x00020000)
+#define FL_LOOSE			(0x00040000)
 
 /* Restrictions */
 
@@ -1192,39 +1192,39 @@ typedef struct _SRestriction	FAR * LPSRestriction;
 
 /* Restriction types */
 
-#define RES_AND				((ULONG) 0x00000000)
-#define RES_OR				((ULONG) 0x00000001)
-#define RES_NOT				((ULONG) 0x00000002)
-#define RES_CONTENT			((ULONG) 0x00000003)
-#define RES_PROPERTY		((ULONG) 0x00000004)
-#define RES_COMPAREPROPS	((ULONG) 0x00000005)
-#define RES_BITMASK			((ULONG) 0x00000006)
-#define RES_SIZE			((ULONG) 0x00000007)
-#define RES_EXIST			((ULONG) 0x00000008)
-#define RES_SUBRESTRICTION	((ULONG) 0x00000009)
-#define RES_COMMENT			((ULONG) 0x0000000A)
-#define RES_COUNT			((ULONG) 0x0000000B)	// OFFICEDEV: Count restriction to CAP results
-#define RES_ANNOTATION		((ULONG) 0x0000000C)	// OFFICEDEV: Annotation restriction to pass information like LCID, etc.
+#define RES_AND				(0x00000000)
+#define RES_OR				(0x00000001)
+#define RES_NOT				(0x00000002)
+#define RES_CONTENT			(0x00000003)
+#define RES_PROPERTY		(0x00000004)
+#define RES_COMPAREPROPS	(0x00000005)
+#define RES_BITMASK			(0x00000006)
+#define RES_SIZE			(0x00000007)
+#define RES_EXIST			(0x00000008)
+#define RES_SUBRESTRICTION	(0x00000009)
+#define RES_COMMENT			(0x0000000A)
+#define RES_COUNT			(0x0000000B)	// OFFICEDEV: Count restriction to CAP results
+#define RES_ANNOTATION		(0x0000000C)	// OFFICEDEV: Annotation restriction to pass information like LCID, etc.
 
 /* Relational operators. These apply to all property comparison restrictions. */
 
-#define RELOP_LT		((ULONG) 0)		/* <  */
-#define RELOP_LE		((ULONG) 1)		/* <= */
-#define RELOP_GT		((ULONG) 2)		/* >  */
-#define RELOP_GE		((ULONG) 3)		/* >= */
-#define RELOP_EQ		((ULONG) 4)		/* == */
-#define RELOP_NE		((ULONG) 5)		/* != */
-#define RELOP_RE		((ULONG) 6)		/* LIKE (Regular expression) */
+#define RELOP_LT		(0)		/* <  */
+#define RELOP_LE		(1)		/* <= */
+#define RELOP_GT		(2)		/* >  */
+#define RELOP_GE		(3)		/* >= */
+#define RELOP_EQ		(4)		/* == */
+#define RELOP_NE		(5)		/* != */
+#define RELOP_RE		(6)		/* LIKE (Regular expression) */
 
 /* Bitmask operators, for RES_BITMASK only. */
 
-#define BMR_EQZ		((ULONG) 0)		/* ==0 */
-#define BMR_NEZ		((ULONG) 1)		/* !=0 */
+#define BMR_EQZ		(0)		/* ==0 */
+#define BMR_NEZ		(1)		/* !=0 */
 
 /* Subobject identifiers for RES_SUBRESTRICTION only. See MAPITAGS.H. */
 
-/* #define PR_MESSAGE_RECIPIENTS  PROP_TAG(PT_OBJECT,0x0E12) */
-/* #define PR_MESSAGE_ATTACHMENTS PROP_TAG(PT_OBJECT,0x0E13) */
+/* #define PR_MESSAGE_RECIPIENTS  MAKE_SCODE(0, 0x0E12, PT_OBJECT) */
+/* #define PR_MESSAGE_ATTACHMENTS MAKE_SCODE(0, 0x0E13, PT_OBJECT) */
 
 typedef struct _SAndRestriction
 {
@@ -1342,30 +1342,30 @@ typedef struct _SRestriction
 
 /* QueryColumn */
 
-#define TBL_ALL_COLUMNS		((ULONG) 0x00000001)
+#define TBL_ALL_COLUMNS		(0x00000001)
 
 /* QueryRows */
 /* Possible values for PR_ROW_TYPE (for categorization) */
 
-#define TBL_LEAF_ROW			((ULONG) 1)
-#define TBL_EMPTY_CATEGORY		((ULONG) 2)
-#define TBL_EXPANDED_CATEGORY	((ULONG) 3)
-#define TBL_COLLAPSED_CATEGORY	((ULONG) 4)
+#define TBL_LEAF_ROW			(1)
+#define TBL_EMPTY_CATEGORY		(2)
+#define TBL_EXPANDED_CATEGORY	(3)
+#define TBL_COLLAPSED_CATEGORY	(4)
 
 /* Table wait flag */
 
-#define TBL_NOWAIT			((ULONG) 0x00000001)
+#define TBL_NOWAIT			(0x00000001)
 /* alternative name for TBL_NOWAIT */
-#define TBL_ASYNC			((ULONG) 0x00000001)
-#define TBL_BATCH			((ULONG) 0x00000002)
+#define TBL_ASYNC			(0x00000001)
+#define TBL_BATCH			(0x00000002)
 
 /* FindRow */
 
-#define DIR_BACKWARD		((ULONG) 0x00000001)
+#define DIR_BACKWARD		(0x00000001)
 
 /* Table cursor states */
 
-#define TBL_NOADVANCE		((ULONG) 0x00000001)
+#define TBL_NOADVANCE		(0x00000001)
 
 #define MAPI_IMAPITABLE_METHODS(IPURE)									\
 	MAPIMETHOD(GetLastError)											\
@@ -1484,34 +1484,34 @@ DECLARE_MAPI_INTERFACE_(IProfSect, IMAPIProp)
 
 /* Values for PR_RESOURCE_TYPE, _METHODS, _FLAGS */
 
-#define MAPI_STORE_PROVIDER		((ULONG) 33)	/* Message Store */
-#define MAPI_AB					((ULONG) 34)	/* Address Book */
-#define MAPI_AB_PROVIDER		((ULONG) 35)	/* Address Book Provider */
-#define MAPI_TRANSPORT_PROVIDER	((ULONG) 36)	/* Transport Provider */
-#define MAPI_SPOOLER			((ULONG) 37)	/* Message Spooler */
-#define MAPI_PROFILE_PROVIDER	((ULONG) 38)	/* Profile Provider */
-#define MAPI_SUBSYSTEM			((ULONG) 39)	/* Overall Subsystem Status */
-#define MAPI_HOOK_PROVIDER		((ULONG) 40)	/* Spooler Hook */
+#define MAPI_STORE_PROVIDER		(33)	/* Message Store */
+#define MAPI_AB					(34)	/* Address Book */
+#define MAPI_AB_PROVIDER		(35)	/* Address Book Provider */
+#define MAPI_TRANSPORT_PROVIDER	(36)	/* Transport Provider */
+#define MAPI_SPOOLER			(37)	/* Message Spooler */
+#define MAPI_PROFILE_PROVIDER	(38)	/* Profile Provider */
+#define MAPI_SUBSYSTEM			(39)	/* Overall Subsystem Status */
+#define MAPI_HOOK_PROVIDER		(40)	/* Spooler Hook */
 
-#define STATUS_VALIDATE_STATE	((ULONG) 0x00000001)
-#define STATUS_SETTINGS_DIALOG	((ULONG) 0x00000002)
-#define STATUS_CHANGE_PASSWORD	((ULONG) 0x00000004)
-#define STATUS_FLUSH_QUEUES		((ULONG) 0x00000008)
+#define STATUS_VALIDATE_STATE	(0x00000001)
+#define STATUS_SETTINGS_DIALOG	(0x00000002)
+#define STATUS_CHANGE_PASSWORD	(0x00000004)
+#define STATUS_FLUSH_QUEUES		(0x00000008)
 
-#define STATUS_DEFAULT_OUTBOUND	((ULONG) 0x00000001)
-#define STATUS_DEFAULT_STORE	((ULONG) 0x00000002)
-#define STATUS_PRIMARY_IDENTITY	((ULONG) 0x00000004)
-#define STATUS_SIMPLE_STORE		((ULONG) 0x00000008)
-#define STATUS_XP_PREFER_LAST	((ULONG) 0x00000010)
-#define STATUS_NO_PRIMARY_IDENTITY ((ULONG) 0x00000020)
-#define STATUS_NO_DEFAULT_STORE	((ULONG) 0x00000040)
-#define STATUS_TEMP_SECTION		((ULONG) 0x00000080)
-#define STATUS_OWN_STORE		((ULONG) 0x00000100)
-/****** HOOK_INBOUND			((ULONG) 0x00000200) Defined in MAPIHOOK.H */
-/****** HOOK_OUTBOUND			((ULONG) 0x00000400) Defined in MAPIHOOK.H */
-#define STATUS_NEED_IPM_TREE	((ULONG) 0x00000800)
-#define	STATUS_PRIMARY_STORE	((ULONG) 0x00001000)
-#define	STATUS_SECONDARY_STORE	((ULONG) 0x00002000)
+#define STATUS_DEFAULT_OUTBOUND	(0x00000001)
+#define STATUS_DEFAULT_STORE	(0x00000002)
+#define STATUS_PRIMARY_IDENTITY	(0x00000004)
+#define STATUS_SIMPLE_STORE		(0x00000008)
+#define STATUS_XP_PREFER_LAST	(0x00000010)
+#define STATUS_NO_PRIMARY_IDENTITY (0x00000020)
+#define STATUS_NO_DEFAULT_STORE	(0x00000040)
+#define STATUS_TEMP_SECTION		(0x00000080)
+#define STATUS_OWN_STORE		(0x00000100)
+/****** HOOK_INBOUND			(0x00000200) Defined in MAPIHOOK.H */
+/****** HOOK_OUTBOUND			(0x00000400) Defined in MAPIHOOK.H */
+#define STATUS_NEED_IPM_TREE	(0x00000800)
+#define	STATUS_PRIMARY_STORE	(0x00001000)
+#define	STATUS_SECONDARY_STORE	(0x00002000)
 
 
 /*
@@ -1519,42 +1519,42 @@ DECLARE_MAPI_INTERFACE_(IProfSect, IMAPIProp)
  * for provider type-specific values. (DCR 304)
  */
 
-#define	STATUS_AVAILABLE		((ULONG) 0x00000001)
-#define STATUS_OFFLINE			((ULONG) 0x00000002)
-#define STATUS_FAILURE			((ULONG) 0x00000004)
+#define	STATUS_AVAILABLE		(0x00000001)
+#define STATUS_OFFLINE			(0x00000002)
+#define STATUS_FAILURE			(0x00000004)
 
 /* Transport values of PR_STATUS_CODE */
 
-#define STATUS_INBOUND_ENABLED	((ULONG) 0x00010000)
-#define STATUS_INBOUND_ACTIVE	((ULONG) 0x00020000)
-#define STATUS_INBOUND_FLUSH	((ULONG) 0x00040000)
-#define STATUS_OUTBOUND_ENABLED	((ULONG) 0x00100000)
-#define STATUS_OUTBOUND_ACTIVE	((ULONG) 0x00200000)
-#define STATUS_OUTBOUND_FLUSH	((ULONG) 0x00400000)
-#define	STATUS_REMOTE_ACCESS	((ULONG) 0x00800000)
+#define STATUS_INBOUND_ENABLED	(0x00010000)
+#define STATUS_INBOUND_ACTIVE	(0x00020000)
+#define STATUS_INBOUND_FLUSH	(0x00040000)
+#define STATUS_OUTBOUND_ENABLED	(0x00100000)
+#define STATUS_OUTBOUND_ACTIVE	(0x00200000)
+#define STATUS_OUTBOUND_FLUSH	(0x00400000)
+#define	STATUS_REMOTE_ACCESS	(0x00800000)
 
 /* ValidateState flags */
 
-#define SUPPRESS_UI					((ULONG) 0x00000001)
-#define	REFRESH_XP_HEADER_CACHE		((ULONG) 0x00010000)
-#define	PROCESS_XP_HEADER_CACHE 	((ULONG) 0x00020000)
-#define	FORCE_XP_CONNECT			((ULONG) 0x00040000)
-#define FORCE_XP_DISCONNECT			((ULONG) 0x00080000)
-#define CONFIG_CHANGED				((ULONG) 0x00100000)
-#define ABORT_XP_HEADER_OPERATION	((ULONG) 0x00200000)
-#define SHOW_XP_SESSION_UI			((ULONG) 0x00400000)
+#define SUPPRESS_UI					(0x00000001)
+#define	REFRESH_XP_HEADER_CACHE		(0x00010000)
+#define	PROCESS_XP_HEADER_CACHE 	(0x00020000)
+#define	FORCE_XP_CONNECT			(0x00040000)
+#define FORCE_XP_DISCONNECT			(0x00080000)
+#define CONFIG_CHANGED				(0x00100000)
+#define ABORT_XP_HEADER_OPERATION	(0x00200000)
+#define SHOW_XP_SESSION_UI			(0x00400000)
 
 /* SettingsDialog flags */
 
-#define UI_READONLY		((ULONG) 0x00000001)
+#define UI_READONLY		(0x00000001)
 
 /* FlushQueues flags */
 
-#define FLUSH_UPLOAD		((ULONG) 0x00000002)
-#define FLUSH_DOWNLOAD		((ULONG) 0x00000004)
-#define FLUSH_FORCE			((ULONG) 0x00000008)
-#define FLUSH_NO_UI			((ULONG) 0x00000010)
-#define FLUSH_ASYNC_OK		((ULONG) 0x00000020)
+#define FLUSH_UPLOAD		(0x00000002)
+#define FLUSH_DOWNLOAD		(0x00000004)
+#define FLUSH_FORCE			(0x00000008)
+#define FLUSH_NO_UI			(0x00000010)
+#define FLUSH_ASYNC_OK		(0x00000020)
 
 #define MAPI_IMAPISTATUS_METHODS(IPURE)									\
 	MAPIMETHOD(ValidateState)											\
@@ -1587,34 +1587,34 @@ DECLARE_MAPI_INTERFACE_(IMAPIStatus, IMAPIProp)
 
 /* Flags for OpenEntry() */
 
-/****** MAPI_MODIFY				((ULONG) 0x00000001) above */
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
-#define MAPI_BEST_ACCESS		((ULONG) 0x00000010)
+/****** MAPI_MODIFY				(0x00000001) above */
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) below */
+#define MAPI_BEST_ACCESS		(0x00000010)
 
 /* GetContentsTable() */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
-/****** MAPI_ASSOCIATED			((ULONG) 0x00000040) below */
+/****** MAPI_UNICODE			(0x80000000) above */
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) below */
+/****** MAPI_ASSOCIATED			(0x00000040) below */
 
 /* GetHierarchyTable() */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
-#define CONVENIENT_DEPTH		((ULONG) 0x00000001)
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
+/****** MAPI_UNICODE			(0x80000000) above */
+#define CONVENIENT_DEPTH		(0x00000001)
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) below */
 
 /* GetSearchCriteria */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
-#define SEARCH_RUNNING			((ULONG) 0x00000001)
-#define SEARCH_REBUILD			((ULONG) 0x00000002)
-#define SEARCH_RECURSIVE		((ULONG) 0x00000004)
-#define SEARCH_FOREGROUND		((ULONG) 0x00000008)
+/****** MAPI_UNICODE			(0x80000000) above */
+#define SEARCH_RUNNING			(0x00000001)
+#define SEARCH_REBUILD			(0x00000002)
+#define SEARCH_RECURSIVE		(0x00000004)
+#define SEARCH_FOREGROUND		(0x00000008)
 
 /* SetSearchCriteria */
-#define STOP_SEARCH				((ULONG) 0x00000001)
-#define RESTART_SEARCH			((ULONG) 0x00000002)
-#define RECURSIVE_SEARCH		((ULONG) 0x00000004)
-#define SHALLOW_SEARCH			((ULONG) 0x00000008)
-#define FOREGROUND_SEARCH		((ULONG) 0x00000010)
-#define BACKGROUND_SEARCH		((ULONG) 0x00000020)
+#define STOP_SEARCH				(0x00000001)
+#define RESTART_SEARCH			(0x00000002)
+#define RECURSIVE_SEARCH		(0x00000004)
+#define SHALLOW_SEARCH			(0x00000008)
+#define FOREGROUND_SEARCH		(0x00000010)
+#define BACKGROUND_SEARCH		(0x00000020)
 
 #define MAPI_IMAPICONTAINER_METHODS(IPURE)								\
 	MAPIMETHOD(GetContentsTable)										\
@@ -1671,26 +1671,26 @@ typedef struct _flaglist
 /*
  *  Container flags
  */
-#define AB_RECIPIENTS			((ULONG) 0x00000001)
-#define AB_SUBCONTAINERS		((ULONG) 0x00000002)
-#define AB_MODIFIABLE			((ULONG) 0x00000004)
-#define AB_UNMODIFIABLE			((ULONG) 0x00000008)
-#define AB_FIND_ON_OPEN			((ULONG) 0x00000010)
-#define AB_NOT_DEFAULT			((ULONG) 0x00000020)
+#define AB_RECIPIENTS			(0x00000001)
+#define AB_SUBCONTAINERS		(0x00000002)
+#define AB_MODIFIABLE			(0x00000004)
+#define AB_UNMODIFIABLE			(0x00000008)
+#define AB_FIND_ON_OPEN			(0x00000010)
+#define AB_NOT_DEFAULT			(0x00000020)
 
 /* CreateEntry() */
 
-#define CREATE_CHECK_DUP_STRICT	((ULONG) 0x00000001)
-#define CREATE_CHECK_DUP_LOOSE	((ULONG) 0x00000002)
-#define CREATE_REPLACE			((ULONG) 0x00000004)
+#define CREATE_CHECK_DUP_STRICT	(0x00000001)
+#define CREATE_CHECK_DUP_LOOSE	(0x00000002)
+#define CREATE_REPLACE			(0x00000004)
 
 /* ResolveNames() - ulFlags */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /* ResolveNames() - rgulFlags */
-#define MAPI_UNRESOLVED			((ULONG) 0x00000000)
-#define MAPI_AMBIGUOUS			((ULONG) 0x00000001)
-#define MAPI_RESOLVED			((ULONG) 0x00000002)
+#define MAPI_UNRESOLVED			(0x00000000)
+#define MAPI_AMBIGUOUS			(0x00000001)
+#define MAPI_RESOLVED			(0x00000002)
 
 
 #define MAPI_IABCONTAINER_METHODS(IPURE)								\
@@ -1731,14 +1731,14 @@ DECLARE_MAPI_INTERFACE_(IABContainer, IMAPIContainer)
 	passing in the following flag in the ulFlags parameter.  Setting this flag
 	indicates that PR_SEND_RICH_INFO will be FALSE.
 */
-#define MAPI_SEND_NO_RICH_INFO		((ULONG) 0x00010000)
+#define MAPI_SEND_NO_RICH_INFO		(0x00010000)
 
 
 
 
 /* Values of PR_NDR_DIAG_CODE */
 
-#define MAPI_DIAG(_code)	((LONG) _code)
+#define MAPI_DIAG(_code)	((int) _code)
 
 #define MAPI_DIAG_NO_DIAGNOSTIC						MAPI_DIAG( -1 )
 #define MAPI_DIAG_OR_NAME_UNRECOGNIZED				MAPI_DIAG( 0 )
@@ -1792,13 +1792,13 @@ DECLARE_MAPI_INTERFACE_(IABContainer, IMAPIContainer)
 
 /* Values of PR_DELIVERY_POINT (MH_T_DELIVERY_POINT) */
 
-#define MAPI_MH_DP_PUBLIC_UA						((ULONG) 0)
-#define MAPI_MH_DP_PRIVATE_UA						((ULONG) 1)
-#define MAPI_MH_DP_MS								((ULONG) 2)
-#define MAPI_MH_DP_ML								((ULONG) 3)
-#define MAPI_MH_DP_PDAU								((ULONG) 4)
-#define MAPI_MH_DP_PDS_PATRON						((ULONG) 5)
-#define MAPI_MH_DP_OTHER_AU							((ULONG) 6)
+#define MAPI_MH_DP_PUBLIC_UA						(0)
+#define MAPI_MH_DP_PRIVATE_UA						(1)
+#define MAPI_MH_DP_MS								(2)
+#define MAPI_MH_DP_ML								(3)
+#define MAPI_MH_DP_PDAU								(4)
+#define MAPI_MH_DP_PDS_PATRON						(5)
+#define MAPI_MH_DP_OTHER_AU							(6)
 
 
 #define MAPI_IMAILUSER_METHODS(IPURE)
@@ -1850,77 +1850,77 @@ DECLARE_MAPI_INTERFACE_(IDistList, IMAPIContainer)
 
 /* IMAPIFolder folder type (enum) */
 
-#define FOLDER_ROOT				((ULONG) 0x00000000)
-#define FOLDER_GENERIC			((ULONG) 0x00000001)
-#define FOLDER_SEARCH			((ULONG) 0x00000002)
+#define FOLDER_ROOT				(0x00000000)
+#define FOLDER_GENERIC			(0x00000001)
+#define FOLDER_SEARCH			(0x00000002)
 
 /* CreateMessage */
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
-/****** MAPI_ASSOCIATED			((ULONG) 0x00000040) below */
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) below */
+/****** MAPI_ASSOCIATED			(0x00000040) below */
 
 /* CopyMessages */
 
-#define MESSAGE_MOVE			((ULONG) 0x00000001)
-#define MESSAGE_DIALOG			((ULONG) 0x00000002)
-/****** MAPI_DECLINE_OK			((ULONG) 0x00000004) above */
+#define MESSAGE_MOVE			(0x00000001)
+#define MESSAGE_DIALOG			(0x00000002)
+/****** MAPI_DECLINE_OK			(0x00000004) above */
 
 /* CreateFolder */
 
-#define OPEN_IF_EXISTS			((ULONG) 0x00000001)
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+#define OPEN_IF_EXISTS			(0x00000001)
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) below */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /* DeleteFolder */
 
-#define DEL_MESSAGES			((ULONG) 0x00000001)
-#define FOLDER_DIALOG			((ULONG) 0x00000002)
-#define DEL_FOLDERS				((ULONG) 0x00000004)
+#define DEL_MESSAGES			(0x00000001)
+#define FOLDER_DIALOG			(0x00000002)
+#define DEL_FOLDERS				(0x00000004)
 
 /* EmptyFolder */
-#define DEL_ASSOCIATED			((ULONG) 0x00000008)
+#define DEL_ASSOCIATED			(0x00000008)
 
 /* CopyFolder */
 
-#define FOLDER_MOVE				((ULONG) 0x00000001)
-/****** FOLDER_DIALOG			((ULONG) 0x00000002) above */
-/****** MAPI_DECLINE_OK			((ULONG) 0x00000004) above */
-#define COPY_SUBFOLDERS			((ULONG) 0x00000010)
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+#define FOLDER_MOVE				(0x00000001)
+/****** FOLDER_DIALOG			(0x00000002) above */
+/****** MAPI_DECLINE_OK			(0x00000004) above */
+#define COPY_SUBFOLDERS			(0x00000010)
+/****** MAPI_UNICODE			(0x80000000) above */
 
 
 /* SetReadFlags */
 
-/****** SUPPRESS_RECEIPT		((ULONG) 0x00000001) below */
-/****** FOLDER_DIALOG			((ULONG) 0x00000002) above */
-/****** CLEAR_READ_FLAG			((ULONG) 0x00000004) below */
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
-/******	GENERATE_RECEIPT_ONLY	((ULONG) 0x00000010) below */
-/****** CLEAR_RN_PENDING		((ULONG) 0x00000020) below */
-/****** CLEAR_NRN_PENDING		((ULONG) 0x00000040) below */
+/****** SUPPRESS_RECEIPT		(0x00000001) below */
+/****** FOLDER_DIALOG			(0x00000002) above */
+/****** CLEAR_READ_FLAG			(0x00000004) below */
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) below */
+/******	GENERATE_RECEIPT_ONLY	(0x00000010) below */
+/****** CLEAR_RN_PENDING		(0x00000020) below */
+/****** CLEAR_NRN_PENDING		(0x00000040) below */
 
 
 /* GetMessageStatus */
 
-#define MSGSTATUS_HIGHLIGHTED	((ULONG) 0x00000001)
-#define MSGSTATUS_TAGGED		((ULONG) 0x00000002)
-#define MSGSTATUS_HIDDEN		((ULONG) 0x00000004)
-#define MSGSTATUS_DELMARKED		((ULONG) 0x00000008)
+#define MSGSTATUS_HIGHLIGHTED	(0x00000001)
+#define MSGSTATUS_TAGGED		(0x00000002)
+#define MSGSTATUS_HIDDEN		(0x00000004)
+#define MSGSTATUS_DELMARKED		(0x00000008)
 
 /* Bits for remote message status */
 
-#define	MSGSTATUS_REMOTE_DOWNLOAD	((ULONG) 0x00001000)
-#define	MSGSTATUS_REMOTE_DELETE		((ULONG) 0x00002000)
+#define	MSGSTATUS_REMOTE_DOWNLOAD	(0x00001000)
+#define	MSGSTATUS_REMOTE_DELETE		(0x00002000)
 
 /* SaveContentsSort */
 
-#define RECURSIVE_SORT			((ULONG) 0x00000002)
+#define RECURSIVE_SORT			(0x00000002)
 
 /* PR_STATUS property */
 
-#define FLDSTATUS_HIGHLIGHTED	((ULONG) 0x00000001)
-#define FLDSTATUS_TAGGED		((ULONG) 0x00000002)
-#define FLDSTATUS_HIDDEN		((ULONG) 0x00000004)
-#define FLDSTATUS_DELMARKED		((ULONG) 0x00000008)
+#define FLDSTATUS_HIGHLIGHTED	(0x00000001)
+#define FLDSTATUS_TAGGED		(0x00000002)
+#define FLDSTATUS_HIDDEN		(0x00000004)
+#define FLDSTATUS_DELMARKED		(0x00000008)
 
 #define MAPI_IMAPIFOLDER_METHODS(IPURE)									\
 	MAPIMETHOD(CreateMessage)											\
@@ -1999,74 +1999,74 @@ DECLARE_MAPI_INTERFACE_(IMAPIFolder, IMAPIContainer)
 /* IMsgStore Interface ----------------------------------------------------- */
 
 /*  PR_STORE_SUPPORT_MASK bits */
-#define STORE_ENTRYID_UNIQUE	((ULONG) 0x00000001)
-#define STORE_READONLY			((ULONG) 0x00000002)
-#define STORE_SEARCH_OK			((ULONG) 0x00000004)
-#define STORE_MODIFY_OK			((ULONG) 0x00000008)
-#define STORE_CREATE_OK			((ULONG) 0x00000010)
-#define STORE_ATTACH_OK			((ULONG) 0x00000020)
-#define STORE_OLE_OK			((ULONG) 0x00000040)
-#define STORE_SUBMIT_OK			((ULONG) 0x00000080)
-#define STORE_NOTIFY_OK			((ULONG) 0x00000100)
-#define STORE_MV_PROPS_OK		((ULONG) 0x00000200)
-#define STORE_CATEGORIZE_OK		((ULONG) 0x00000400)
-#define STORE_RTF_OK			((ULONG) 0x00000800)
-#define STORE_RESTRICTION_OK	((ULONG) 0x00001000)
-#define STORE_SORT_OK			((ULONG) 0x00002000)
-#define	STORE_PUBLIC_FOLDERS	((ULONG) 0x00004000)
-#define	STORE_UNCOMPRESSED_RTF	((ULONG) 0x00008000)
+#define STORE_ENTRYID_UNIQUE	(0x00000001)
+#define STORE_READONLY			(0x00000002)
+#define STORE_SEARCH_OK			(0x00000004)
+#define STORE_MODIFY_OK			(0x00000008)
+#define STORE_CREATE_OK			(0x00000010)
+#define STORE_ATTACH_OK			(0x00000020)
+#define STORE_OLE_OK			(0x00000040)
+#define STORE_SUBMIT_OK			(0x00000080)
+#define STORE_NOTIFY_OK			(0x00000100)
+#define STORE_MV_PROPS_OK		(0x00000200)
+#define STORE_CATEGORIZE_OK		(0x00000400)
+#define STORE_RTF_OK			(0x00000800)
+#define STORE_RESTRICTION_OK	(0x00001000)
+#define STORE_SORT_OK			(0x00002000)
+#define	STORE_PUBLIC_FOLDERS	(0x00004000)
+#define	STORE_UNCOMPRESSED_RTF	(0x00008000)
 
 /* PR_STORE_STATE bits, try not to collide with PR_STORE_SUPPORT_MASK */
 
-#define STORE_HAS_SEARCHES		((ULONG) 0x01000000)
+#define STORE_HAS_SEARCHES		(0x01000000)
 
 
 /* OpenEntry() */
 
-/****** MAPI_MODIFY				((ULONG) 0x00000001) above */
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
-/****** MAPI_BEST_ACCESS		((ULONG) 0x00000010) above */
+/****** MAPI_MODIFY				(0x00000001) above */
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) below */
+/****** MAPI_BEST_ACCESS		(0x00000010) above */
 
 /* SetReceiveFolder() */
 
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /* GetReceiveFolder() */
 
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /* GetReceiveFolderTable() */
 
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) below */
 
 /* StoreLogoff() */
 
-#define	LOGOFF_NO_WAIT			((ULONG) 0x00000001)
-#define	LOGOFF_ORDERLY			((ULONG) 0x00000002)
-#define	LOGOFF_PURGE			((ULONG) 0x00000004)
-#define LOGOFF_ABORT			((ULONG) 0x00000008)
-#define LOGOFF_QUIET			((ULONG) 0x00000010)
+#define	LOGOFF_NO_WAIT			(0x00000001)
+#define	LOGOFF_ORDERLY			(0x00000002)
+#define	LOGOFF_PURGE			(0x00000004)
+#define LOGOFF_ABORT			(0x00000008)
+#define LOGOFF_QUIET			(0x00000010)
 
-#define LOGOFF_COMPLETE			((ULONG) 0x00010000)
-#define	LOGOFF_INBOUND			((ULONG) 0x00020000)
-#define LOGOFF_OUTBOUND			((ULONG) 0x00040000)
-#define LOGOFF_OUTBOUND_QUEUE	((ULONG) 0x00080000)
+#define LOGOFF_COMPLETE			(0x00010000)
+#define	LOGOFF_INBOUND			(0x00020000)
+#define LOGOFF_OUTBOUND			(0x00040000)
+#define LOGOFF_OUTBOUND_QUEUE	(0x00080000)
 
 /* SetLockState() */
 
-#define MSG_LOCKED				((ULONG) 0x00000001)
-#define MSG_UNLOCKED			((ULONG) 0x00000000)
+#define MSG_LOCKED				(0x00000001)
+#define MSG_UNLOCKED			(0x00000000)
 
 /* Flag bits for PR_VALID_FOLDER_MASK */
 
-#define	FOLDER_IPM_SUBTREE_VALID		((ULONG) 0x00000001)
-#define	FOLDER_IPM_INBOX_VALID			((ULONG) 0x00000002)
-#define	FOLDER_IPM_OUTBOX_VALID			((ULONG) 0x00000004)
-#define	FOLDER_IPM_WASTEBASKET_VALID	((ULONG) 0x00000008)
-#define	FOLDER_IPM_SENTMAIL_VALID		((ULONG) 0x00000010)
-#define	FOLDER_VIEWS_VALID				((ULONG) 0x00000020)
-#define	FOLDER_COMMON_VIEWS_VALID		((ULONG) 0x00000040)
-#define	FOLDER_FINDER_VALID				((ULONG) 0x00000080)
+#define	FOLDER_IPM_SUBTREE_VALID		(0x00000001)
+#define	FOLDER_IPM_INBOX_VALID			(0x00000002)
+#define	FOLDER_IPM_OUTBOX_VALID			(0x00000004)
+#define	FOLDER_IPM_WASTEBASKET_VALID	(0x00000008)
+#define	FOLDER_IPM_SENTMAIL_VALID		(0x00000010)
+#define	FOLDER_VIEWS_VALID				(0x00000020)
+#define	FOLDER_COMMON_VIEWS_VALID		(0x00000040)
+#define	FOLDER_FINDER_VALID				(0x00000080)
 
 #define MAPI_IMSGSTORE_METHODS(IPURE)									\
 	MAPIMETHOD(Advise)													\
@@ -2138,71 +2138,75 @@ DECLARE_MAPI_INTERFACE_(IMsgStore, IMAPIProp)
 
 /* SubmitMessage */
 
-#define FORCE_SUBMIT				((ULONG) 0x00000001)
+#define FORCE_SUBMIT				(0x00000001)
 
 /* Flags defined in PR_MESSAGE_FLAGS */
 
-#define MSGFLAG_READ			((ULONG) 0x00000001)
-#define MSGFLAG_UNMODIFIED		((ULONG) 0x00000002)
-#define MSGFLAG_SUBMIT			((ULONG) 0x00000004)
-#define MSGFLAG_UNSENT			((ULONG) 0x00000008)
-#define MSGFLAG_HASATTACH		((ULONG) 0x00000010)
-#define MSGFLAG_FROMME			((ULONG) 0x00000020)
-#define MSGFLAG_ASSOCIATED		((ULONG) 0x00000040)
-#define MSGFLAG_RESEND			((ULONG) 0x00000080)
-#define MSGFLAG_RN_PENDING		((ULONG) 0x00000100)
-#define MSGFLAG_NRN_PENDING		((ULONG) 0x00000200)
+#define MSGFLAG_READ			(0x00000001)
+#define MSGFLAG_UNMODIFIED		(0x00000002)
+#define MSGFLAG_SUBMIT			(0x00000004)
+#define MSGFLAG_UNSENT			(0x00000008)
+#define MSGFLAG_HASATTACH		(0x00000010)
+#define MSGFLAG_FROMME			(0x00000020)
+#define MSGFLAG_ASSOCIATED		(0x00000040)
+#define MSGFLAG_RESEND			(0x00000080)
+#define MSGFLAG_RN_PENDING		(0x00000100)
+#define MSGFLAG_NRN_PENDING		(0x00000200)
 
 /* Flags defined in PR_SUBMIT_FLAGS */
 
-#define SUBMITFLAG_LOCKED		((ULONG) 0x00000001)
-#define SUBMITFLAG_PREPROCESS	((ULONG) 0x00000002)
+#define SUBMITFLAG_LOCKED		(0x00000001)
+#define SUBMITFLAG_PREPROCESS	(0x00000002)
 
 /* GetAttachmentTable() */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /* GetRecipientTable() */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /* ModifyRecipients */
 
-/* ((ULONG) 0x00000001 is not a valid flag on ModifyRecipients. */
-#define MODRECIP_ADD			((ULONG) 0x00000002)
-#define MODRECIP_MODIFY			((ULONG) 0x00000004)
-#define MODRECIP_REMOVE			((ULONG) 0x00000008)
+/* (0x00000001 is not a valid flag on ModifyRecipients. */
+#define MODRECIP_ADD			(0x00000002)
+#define MODRECIP_MODIFY			(0x00000004)
+#define MODRECIP_REMOVE			(0x00000008)
 
 /* SetReadFlag */
 
-#define SUPPRESS_RECEIPT		((ULONG) 0x00000001)
-#define CLEAR_READ_FLAG			((ULONG) 0x00000004)
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) below */
-#define	GENERATE_RECEIPT_ONLY	((ULONG) 0x00000010)
-#define CLEAR_RN_PENDING		((ULONG) 0x00000020)
-#define CLEAR_NRN_PENDING		((ULONG) 0x00000040)
+#define SUPPRESS_RECEIPT		(0x00000001)
+#define CLEAR_READ_FLAG			(0x00000004)
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) below */
+#define	GENERATE_RECEIPT_ONLY	(0x00000010)
+#define CLEAR_RN_PENDING		(0x00000020)
+#define CLEAR_NRN_PENDING		(0x00000040)
 
 /* DeleteAttach */
 
-#define ATTACH_DIALOG			((ULONG) 0x00000001)
+#define ATTACH_DIALOG			(0x00000001)
 
 /* PR_SECURITY values */
-#define SECURITY_SIGNED			((ULONG) 0x00000001)
-#define SECURITY_ENCRYPTED		((ULONG) 0x00000002)
+#define SECURITY_SIGNED			(0x00000001)
+#define SECURITY_ENCRYPTED		(0x00000002)
 
 /* PR_PRIORITY values */
-#define PRIO_URGENT				((LONG)  1)
-#define PRIO_NORMAL				((LONG)  0)
-#define PRIO_NONURGENT			((LONG) -1)
+enum {
+	PRIO_URGENT = 1,
+	PRIO_NORMAL = 0,
+	PRIO_NONURGENT = -1,
+};
 
 /* PR_SENSITIVITY values */
-#define SENSITIVITY_NONE					((ULONG) 0x00000000)
-#define SENSITIVITY_PERSONAL				((ULONG) 0x00000001)
-#define SENSITIVITY_PRIVATE					((ULONG) 0x00000002)
-#define SENSITIVITY_COMPANY_CONFIDENTIAL	((ULONG) 0x00000003)
+#define SENSITIVITY_NONE					(0x00000000)
+#define SENSITIVITY_PERSONAL				(0x00000001)
+#define SENSITIVITY_PRIVATE					(0x00000002)
+#define SENSITIVITY_COMPANY_CONFIDENTIAL	(0x00000003)
 
 /* PR_IMPORTANCE values */
-#define IMPORTANCE_LOW			((LONG) 0)
-#define IMPORTANCE_NORMAL		((LONG) 1)
-#define IMPORTANCE_HIGH			((LONG) 2)
+enum {
+	IMPORTANCE_LOW = 	0,
+	IMPORTANCE_NORMAL = 1,
+	IMPORTANCE_HIGH = 	2,
+};
 
 #define MAPI_IMESSAGE_METHODS(IPURE)									\
 	MAPIMETHOD(GetAttachmentTable)										\
@@ -2248,13 +2252,13 @@ DECLARE_MAPI_INTERFACE_(IMessage, IMAPIProp)
 
 /* IAttach attachment methods: PR_ATTACH_METHOD values */
 
-#define NO_ATTACHMENT			((ULONG) 0x00000000)
-#define ATTACH_BY_VALUE			((ULONG) 0x00000001)
-#define ATTACH_BY_REFERENCE		((ULONG) 0x00000002)
-#define ATTACH_BY_REF_RESOLVE	((ULONG) 0x00000003)
-#define ATTACH_BY_REF_ONLY		((ULONG) 0x00000004)
-#define ATTACH_EMBEDDED_MSG		((ULONG) 0x00000005)
-#define ATTACH_OLE				((ULONG) 0x00000006)
+#define NO_ATTACHMENT			(0x00000000)
+#define ATTACH_BY_VALUE			(0x00000001)
+#define ATTACH_BY_REFERENCE		(0x00000002)
+#define ATTACH_BY_REF_RESOLVE	(0x00000003)
+#define ATTACH_BY_REF_ONLY		(0x00000004)
+#define ATTACH_EMBEDDED_MSG		(0x00000005)
+#define ATTACH_OLE				(0x00000006)
 
 #define MAPI_IATTACH_METHODS(IPURE)
 
@@ -2277,16 +2281,16 @@ DECLARE_MAPI_INTERFACE_(IAttach, IMAPIProp)
 #define SET_ADRPARM_VERSION(ulFlags, ulVersion)  (((ULONG)ulVersion) | (((ULONG)ulFlags) & 0x0FFFFFFF))
 
 /*  Current versions of ADRPARM  */
-#define ADRPARM_HELP_CTX		((ULONG) 0x00000000)
+#define ADRPARM_HELP_CTX		(0x00000000)
 
 
 /*  ulFlags   - bit fields */
-#define DIALOG_MODAL			((ULONG) 0x00000001)
-#define DIALOG_SDI				((ULONG) 0x00000002)
-#define DIALOG_OPTIONS			((ULONG) 0x00000004)
-#define ADDRESS_ONE				((ULONG) 0x00000008)
-#define AB_SELECTONLY			((ULONG) 0x00000010)
-#define AB_RESOLVE				((ULONG) 0x00000020)
+#define DIALOG_MODAL			(0x00000001)
+#define DIALOG_SDI				(0x00000002)
+#define DIALOG_OPTIONS			(0x00000004)
+#define ADDRESS_ONE				(0x00000008)
+#define AB_SELECTONLY			(0x00000010)
+#define AB_RESOLVE				(0x00000020)
 
 /* --------------------------------- */
 /*  PR_DISPLAY_TYPEs                 */
@@ -2298,25 +2302,25 @@ DECLARE_MAPI_INTERFACE_(IAttach, IMAPIProp)
  */
 
 /*  For address book contents tables */
-#define DT_MAILUSER			((ULONG) 0x00000000)
-#define DT_DISTLIST			((ULONG) 0x00000001)
-#define DT_FORUM			((ULONG) 0x00000002)
-#define DT_AGENT			((ULONG) 0x00000003)
-#define DT_ORGANIZATION		((ULONG) 0x00000004)
-#define DT_PRIVATE_DISTLIST	((ULONG) 0x00000005)
-#define DT_REMOTE_MAILUSER	((ULONG) 0x00000006)
+#define DT_MAILUSER			(0x00000000)
+#define DT_DISTLIST			(0x00000001)
+#define DT_FORUM			(0x00000002)
+#define DT_AGENT			(0x00000003)
+#define DT_ORGANIZATION		(0x00000004)
+#define DT_PRIVATE_DISTLIST	(0x00000005)
+#define DT_REMOTE_MAILUSER	(0x00000006)
 
 /*  For address book hierarchy tables */
-#define DT_MODIFIABLE		((ULONG) 0x00010000)
-#define DT_GLOBAL			((ULONG) 0x00020000)
-#define DT_LOCAL			((ULONG) 0x00030000)
-#define DT_WAN				((ULONG) 0x00040000)
-#define DT_NOT_SPECIFIC		((ULONG) 0x00050000)
+#define DT_MODIFIABLE		(0x00010000)
+#define DT_GLOBAL			(0x00020000)
+#define DT_LOCAL			(0x00030000)
+#define DT_WAN				(0x00040000)
+#define DT_NOT_SPECIFIC		(0x00050000)
 
 /*  For folder hierarchy tables */
-#define DT_FOLDER			((ULONG) 0x01000000)
-#define DT_FOLDER_LINK		((ULONG) 0x02000000)
-#define DT_FOLDER_SPECIAL	((ULONG) 0x04000000)
+#define DT_FOLDER			(0x01000000)
+#define DT_FOLDER_LINK		(0x02000000)
+#define DT_FOLDER_SPECIAL	(0x04000000)
 
 /*  Accelerator callback for DIALOG_SDI form of AB UI */
 typedef BOOL (STDMETHODCALLTYPE ACCELERATEABSDI)(ULONG_PTR ulUIParam,
@@ -2374,26 +2378,26 @@ typedef struct _ADRPARM
 /* Random flags */
 
 /* Flag for deferred error */
-#define MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008)
+#define MAPI_DEFERRED_ERRORS	(0x00000008)
 
 /* Flag for creating and using Folder Associated Information Messages */
-#define MAPI_ASSOCIATED			((ULONG) 0x00000040)
+#define MAPI_ASSOCIATED			(0x00000040)
 
 /* Flags for OpenMessageStore() */
 
-#define MDB_NO_DIALOG			((ULONG) 0x00000001)
-#define MDB_WRITE				((ULONG) 0x00000004)
-/****** MAPI_DEFERRED_ERRORS	((ULONG) 0x00000008) above */
-/****** MAPI_BEST_ACCESS		((ULONG) 0x00000010) above */
-#define	MDB_TEMPORARY			((ULONG) 0x00000020)
-#define MDB_NO_MAIL				((ULONG) 0x00000080)
+#define MDB_NO_DIALOG			(0x00000001)
+#define MDB_WRITE				(0x00000004)
+/****** MAPI_DEFERRED_ERRORS	(0x00000008) above */
+/****** MAPI_BEST_ACCESS		(0x00000010) above */
+#define	MDB_TEMPORARY			(0x00000020)
+#define MDB_NO_MAIL				(0x00000080)
 
 /* Flags for OpenAddressBook */
 
-#define AB_NO_DIALOG			((ULONG) 0x00000001)
+#define AB_NO_DIALOG			(0x00000001)
 
 #ifndef AB_UNICODEUI
-#define AB_UNICODEUI			((ULONG) 0x00000040)
+#define AB_UNICODEUI			(0x00000040)
 #endif
 
 
@@ -2404,8 +2408,8 @@ typedef struct _ADRPARM
 
 /*  Flags for GetState */
 
-#define  MAPI_ENABLED		((ULONG) 0x00000000)
-#define  MAPI_DISABLED		((ULONG) 0x00000001)
+#define  MAPI_ENABLED		(0x00000000)
+#define  MAPI_DISABLED		(0x00000001)
 
 #define MAPI_IMAPICONTROL_METHODS(IPURE)								\
 	MAPIMETHOD(GetLastError)											\
@@ -2434,28 +2438,28 @@ DECLARE_MAPI_INTERFACE_PTR(IMAPIControl, LPMAPICONTROL);
 
 /* Flags used in display tables - that is, PR_CONTROL_FLAGS */
 
-#define DT_MULTILINE		((ULONG) 0x00000001)
-#define DT_EDITABLE			((ULONG) 0x00000002)
-#define DT_REQUIRED			((ULONG) 0x00000004)
-#define DT_SET_IMMEDIATE	((ULONG) 0x00000008)
-#define DT_PASSWORD_EDIT	((ULONG) 0x00000010)
-#define DT_ACCEPT_DBCS		((ULONG) 0x00000020)
-#define DT_SET_SELECTION	((ULONG) 0x00000040)
+#define DT_MULTILINE		(0x00000001)
+#define DT_EDITABLE			(0x00000002)
+#define DT_REQUIRED			(0x00000004)
+#define DT_SET_IMMEDIATE	(0x00000008)
+#define DT_PASSWORD_EDIT	(0x00000010)
+#define DT_ACCEPT_DBCS		(0x00000020)
+#define DT_SET_SELECTION	(0x00000040)
 
 /* Display Table structures */
 
-#define DTCT_LABEL			((ULONG) 0x00000000)
-#define DTCT_EDIT			((ULONG) 0x00000001)
-#define DTCT_LBX			((ULONG) 0x00000002)
-#define DTCT_COMBOBOX		((ULONG) 0x00000003)
-#define DTCT_DDLBX			((ULONG) 0x00000004)
-#define DTCT_CHECKBOX		((ULONG) 0x00000005)
-#define DTCT_GROUPBOX		((ULONG) 0x00000006)
-#define DTCT_BUTTON			((ULONG) 0x00000007)
-#define DTCT_PAGE			((ULONG) 0x00000008)
-#define DTCT_RADIOBUTTON	((ULONG) 0x00000009)
-#define DTCT_MVLISTBOX		((ULONG) 0x0000000B)
-#define DTCT_MVDDLBX		((ULONG) 0x0000000C)
+#define DTCT_LABEL			(0x00000000)
+#define DTCT_EDIT			(0x00000001)
+#define DTCT_LBX			(0x00000002)
+#define DTCT_COMBOBOX		(0x00000003)
+#define DTCT_DDLBX			(0x00000004)
+#define DTCT_CHECKBOX		(0x00000005)
+#define DTCT_GROUPBOX		(0x00000006)
+#define DTCT_BUTTON			(0x00000007)
+#define DTCT_PAGE			(0x00000008)
+#define DTCT_RADIOBUTTON	(0x00000009)
+#define DTCT_MVLISTBOX		(0x0000000B)
+#define DTCT_MVDDLBX		(0x0000000C)
 
 /* Labels */
 /* Valid ulFlags:
@@ -2495,8 +2499,8 @@ struct _DTBLEDIT_ ## u \
 /*  List Box  */
 /* Valid ulFlags:
  */
-#define MAPI_NO_HBAR		((ULONG) 0x00000001)
-#define MAPI_NO_VBAR		((ULONG) 0x00000002)
+#define MAPI_NO_HBAR		(0x00000001)
+#define MAPI_NO_VBAR		(0x00000002)
 
 typedef struct _DTBLLBX
 {
@@ -2666,7 +2670,7 @@ typedef struct _DTBLMVDDLBX
 /* MSG_SERVICE_UI_READ_ONLY 		0x00000008 - in MAPISPI.H */
 
 /* GetProviderTable() */
-/****** MAPI_UNICODE			((ULONG) 0x80000000) above */
+/****** MAPI_UNICODE			(0x80000000) above */
 
 /* Values for PR_RESOURCE_FLAGS in message service table */
 
